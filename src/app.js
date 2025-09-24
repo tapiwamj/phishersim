@@ -15,7 +15,7 @@ nunjucks.configure(path.join(__dirname, "views"), {
 });
 // Routes
 app.get('/', (req, res) => {
-    res.send('Hello, Express!');
+    res.render("emails");
 });
 
 // Start server
