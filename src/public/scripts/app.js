@@ -7,14 +7,16 @@ function init() {
 }
 
 function listeners() {
-  $(".sideBarToggle").on("click", function (e) {
+  $("#emailListBurger").on("click", function (e) {
     $("#mainSideBar").addClass("visible");
   });
   $(".cancelZone").on("click", function () {
     $("#mainSideBar").removeClass("visible");
   });
   $(".emailContact").on("click", function () {
-    showEmail(true);
+    if ($(this).is("button")) {
+      showEmail(true);
+    }
   });
   $("#backToEmailList").on("click", function () {
     showEmail(false);
@@ -27,7 +29,7 @@ function showEmail(showIt = false) {
     $("#mailboxType").addClass("nodisplay");
     $(".emailListNavigation").removeClass("visible");
     $(".emailCanvasNavigation").addClass("visible");
-  }else{
+  } else {
     $("#emailList").addClass("visible");
     $("#emailCanvas").removeClass("visible");
     $("#mailboxType").removeClass("nodisplay");
