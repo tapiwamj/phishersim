@@ -10,7 +10,7 @@
   margin: 0;
   padding: 0;
   line-height: 1.4;
-  transition: 0.1s;
+  transition: 0.5s;
 }
 
 p,
@@ -37,26 +37,39 @@ button {
   margin: 0;
   padding: 0;
   line-height: 1.4;
-  transition: 0.1s;
+  transition: 0.5s;
 }
 
-.sideBarToggle img {
+.emailNavBtn img {
   width: 30px;
   height: 30px;
 }
 
 .mainSideBar {
   position: fixed;
-  background-color: red;
   top: 0;
   left: -100%;
-  width: 90%;
-  max-width: 300px;
+  width: 100%;
   height: 100vh;
-  padding: 10px;
+  display: flex;
+  z-index: 5;
 }
 .mainSideBar.visible {
   left: 0;
+}
+
+.mainSideBarContent {
+  width: 90%;
+  max-width: 300px;
+  flex-shrink: 0;
+  height: 100%;
+  padding: 10px;
+  background-color: red;
+}
+
+.cancelZone {
+  width: 100%;
+  height: 100%;
 }
 
 .asideBtn {
@@ -135,6 +148,13 @@ button {
   padding: 10px;
 }
 
+.emailListNavigation, .emailCanvasNavigation {
+  display: none;
+}
+.emailListNavigation.visible, .emailCanvasNavigation.visible {
+  display: block;
+}
+
 .emailNavBarTab {
   display: flex;
   align-items: center;
@@ -144,4 +164,27 @@ button {
 }
 .emailNavBarTab h3 {
   font-size: 1.1rem;
+}
+
+.emailCanvas,
+.emailList {
+  display: none;
+}
+.emailCanvas.visible,
+.emailList.visible {
+  display: block;
+}
+
+section {
+  padding: 10px;
+}
+
+.subject {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: rgb(227, 221, 221);
+}
+
+.nodisplay {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

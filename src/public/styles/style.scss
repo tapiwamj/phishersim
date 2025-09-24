@@ -15,7 +15,7 @@
   margin: 0;
   padding: 0;
   line-height: 1.4;
-  transition: 0.1s;
+  transition: 0.5s;
 }
 * {
   @include default_values;
@@ -34,7 +34,7 @@ button {
   all: unset;
   @include default_values;
 }
-.sideBarToggle {
+.emailNavBtn {
   img {
     width: 30px;
     height: 30px;
@@ -42,16 +42,27 @@ button {
 }
 .mainSideBar {
   position: fixed;
-  background-color: red;
   top: 0;
   left: -100%;
-  width: 90%;
-  max-width: 300px;
+  width: 100%;
   height: 100vh;
-  padding: 10px;
+  display: flex;
+  z-index: 5;
   &.visible {
     left: 0;
   }
+}
+.mainSideBarContent {
+  width: 90%;
+  max-width: 300px;
+  flex-shrink: 0;
+  height: 100%;
+  padding: 10px;
+  background-color: red;
+}
+.cancelZone {
+  width: 100%;
+  height: 100%;
 }
 .asideBtn {
   display: flex;
@@ -122,6 +133,12 @@ button {
   background-color: grey;
   padding: 10px;
 }
+.emailListNavigation, .emailCanvasNavigation{
+  display: none;
+  &.visible{
+    display: block;
+  }
+}
 .emailNavBarTab {
   display: flex;
   align-items: center;
@@ -132,3 +149,22 @@ button {
     font-size: 1.1rem;
   }
 }
+.emailCanvas,
+.emailList {
+  display: none;
+  &.visible {
+    display: block;
+  }
+}
+.emailCanvas {
+}
+section {
+  padding: 10px;
+}
+.subject{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: rgb(227, 221, 221);
+}
+//do not add anything below this
+@import "./importants";

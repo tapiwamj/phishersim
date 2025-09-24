@@ -4,41 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scripts/jquery.js"></script>
     <link rel="stylesheet" href="styles/style.css">
     <title>Document</title>
 </head>
 
 <body>
     <nav class="emailNavBar">
-        <div class="emailNavBarTab">
-            <button class="sideBarToggle">
+        <div class="emailListNavigation visible">
+            <div class="emailNavBarTab">
+                <button class="emailNavBtn">
+                    <img src="icons/burger.svg" alt="">
+                </button>
+                <h3>Welcome, Tapiwa</h3>
+            </div>
+            <p id="mailboxType">Inbox</p>
+        </div>
+        <div class="emailCanvasNavigation">
+            <button id="backToEmailList" class="emailNavBtn">
                 <img src="icons/burger.svg" alt="">
             </button>
-            <h3>Welcome, Tapiwa</h3>
         </div>
-        <p>Inbox</p>
     </nav>
     <div class="desktopSplitter">
         <div class="sideBarHolder">
-            <aside class="mainSideBar">
-                <div class="asideHeader">
-                    <h2>EasyMail<sup>™</sup></h2>
-                    <p>ss@live.com</p>
+            <aside id="mainSideBar" class="mainSideBar">
+                <div class="mainSideBarContent">
+                    <div class="asideHeader">
+                        <h2>EasyMail<sup>™</sup></h2>
+                        <p>ss@live.com</p>
+                    </div>
+                    <button class="asideBtn selected">
+                        <img src="icons/burger.svg" alt="">
+                        <p>Inbox</p>
+                    </button>
+                    <button class="asideBtn">
+                        <img src="icons/burger.svg" alt="">
+                        <p>Junk/Spam</p>
+                    </button>
+                    <button class="asideBtn">
+                        <img src="icons/burger.svg" alt="">
+                        <p>Sent Email</p>
+                    </button>
                 </div>
-                <button class="asideBtn selected">
-                    <img src="icons/burger.svg" alt="">
-                    <p>Inbox</p>
-                </button>
-                <button class="asideBtn">
-                    <img src="icons/burger.svg" alt="">
-                    <p>Junk/Spam</p>
-                </button>
-                <button class="asideBtn">
-                    <img src="icons/burger.svg" alt="">
-                    <p>Sent Email</p>
-                </button>
+                <div class="cancelZone"></div>
             </aside>
-            <aside class="emailList">
+            <aside id="emailList" class="emailList visible">
                 <button class="emailContact">
                     <div class="emailIcon">
                         <h2>TT</h2>
@@ -63,7 +74,6 @@
                             inventore ipsa?</p>
                     </div>
                 </button>
-
                 <button class="emailContact">
                     <div class="emailIcon">
                         <h2>TT</h2>
@@ -78,10 +88,14 @@
                 </button>
             </aside>
         </div>
-
-        <div class="mainArea">
-            <section>
-
+        <div id="emailCanvas" class="emailCanvas">
+            <section class="subject">
+                <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3>
+            </section>
+            <section class="body">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis ex hic repellendus asperiores
+                    inventore assumenda adipisci odio accusamus, voluptas molestiae, culpa consectetur quaerat aliquam
+                    rerum possimus eaque quos! Commodi, totam.</p>
             </section>
         </div>
     </div>
@@ -89,5 +103,6 @@
 
     </section>
 </body>
+<script src="scripts/app.js" type="module"></script>
 
 </html>
