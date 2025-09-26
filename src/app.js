@@ -3,6 +3,7 @@ const app = express();
 const nunjucks = require("nunjucks");
 const port = 3000;
 const path = require("path");
+const storyManager = require('./storyManager.js');
 
 // Middleware
 app.use(express.static(path.join(__dirname, "public")));
@@ -19,6 +20,11 @@ app.get('/', (req, res) => {
 });
 app.get('/insert', (req, res) => {
     res.render("emails");
+});
+app.get('/fetchEmail', (req, res) => {
+    const index = req.query.index;
+    const email = storyManager.getEmail(index);
+    return res.json({ email });
 });
 
 // Start server
