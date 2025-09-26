@@ -1,0 +1,11 @@
+{
+    "companyname": "MJ Works",
+    "emails":[
+        {
+            "path": "email1.html",
+            "type": "legit",
+            "sender": "it.support@yourcompany.com",
+            "name": "IT Support"
+        }
+    ]
+}

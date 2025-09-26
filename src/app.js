@@ -17,6 +17,9 @@ nunjucks.configure(path.join(__dirname, "views"), {
 app.get('/', (req, res) => {
     res.render("emails");
 });
+app.get('/insert', (req, res) => {
+    res.render("emails");
+});
 
 // Start server
 app.listen(port, () => {

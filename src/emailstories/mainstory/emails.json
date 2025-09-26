@@ -1,0 +1,30 @@
+{
+    "emailList":[
+        {
+            "email": "it.support@yourcompany.com",
+            "name": "IT Support",
+            "role": "IT support"
+        },
+        {
+            "email": "john.kennedy@yourcompany.com",
+            "name": "John Kennedy",
+            "role": "Supervisor/Manager"
+        },
+        {
+            "email": "hr@yourcompany.com",
+            "name": "Human Resources (HR)",
+            "role": "Human Resources"
+        },
+        {
+            "email": "finance@yourcompany.com",
+            "name": "Finance Department",
+            "role": "Finances"
+        },
+        {
+            "email": "lisa.catch@yourcompany.com",
+            "name": "Lisa Catch",
+            "role": "Co-worker"
+        }
+    ],
+    "csd":""
+}
