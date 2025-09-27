@@ -1,3 +1,9 @@
+import util from "./utilities.js";
+
+const userVals ={
+  name: "",
+  index: 0
+}
 $(document).ready(function () {
   init();
 });
@@ -5,6 +11,7 @@ $(document).ready(function () {
 function init() {
   listeners();
 }
+
 
 function listeners() {
   $("#emailListBurger").on("click", function (e) {
@@ -21,6 +28,10 @@ function listeners() {
   $("#backToEmailList").on("click", function () {
     showEmail(false);
   });
+  $('#nameBtnSub').on('click', function () {
+    if ($('#yourname').val() == "") return;
+    userVals.name = $('#yourname').val();
+  })
 }
 function showEmail(showIt = false) {
   if (showIt == true) {
