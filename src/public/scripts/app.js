@@ -14,6 +14,8 @@ function init() {
 }
 
 function fetchEmail(index) {
+  console.log(index);
+  
   $.ajax({
     url: `/fetchEmail/${index}`,
     method: "GET",
