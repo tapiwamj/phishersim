@@ -10,8 +10,29 @@ $(document).ready(function () {
 
 function init() {
   listeners();
+  fetchEmail(userVals.index);
 }
 
+function fetchEmail(index) {
+  console.log(index);
+  
+  $.ajax({
+    url: `/fetchEmail/${index}`,
+    method: "GET",
+    dataType: "json",
+    success: function (data) {
+      emailsHandler(data);
+    },
+    error: function (xhr, status, error) {
+      console.error("Failed to fetch email:", error);
+    }
+  });
+}
+
+function emailsHandler(email) {
+  console.log(email);
+  
+}
 
 function listeners() {
   $("#emailListBurger").on("click", function (e) {
