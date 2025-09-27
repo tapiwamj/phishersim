@@ -1,0 +1,16 @@
+{% import "components/inputs.njk" as inputComp %}
+<div id="popupHolder" class="popupHolder">
+    <div class="popup">
+        <div class="popup_head">
+            <h3 id="popupTitle"></h3>
+            <button class="closepopup">
+                <img src="icons/burger.svg" alt="">
+            </button>
+        </div>
+        <div class="popupPage">
+            <p>What is your name. This will be used in all emails you receive.</p>
+            {{ inputComp.input("yourname", "Your name") }}
+            <button id="nameBtnSub" class="standardBtn fullWidth">Submit</button>
+        </div>
+    </div>
+</div>
