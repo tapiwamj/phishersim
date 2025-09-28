@@ -7,7 +7,7 @@
             "email": "it.support@yourcompany.com",
             "name": "IT Support",
             "subject": "Important: Update on IT Policies and Enhanced Security Measures",
-            "actions": []
+            "actions": false
         },
         {
             "path": "email2.html",
@@ -15,7 +15,7 @@
             "email": "john.kennedy@yourcompany.com",
             "name": "John Kennedy",
             "subject": "Welcome to the Team",
-            "actions": ["ignore", "action"]
+            "actions": true
         }
     ]
 }
