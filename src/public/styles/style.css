@@ -240,14 +240,16 @@ select.invalid {
   margin-bottom: 5px;
   line-height: 1;
 }
-.emailContactBody h3 {
-  font-weight: 400;
-}
-.emailContactBody p {
+.emailContactBody p, .emailContactBody h3 {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   display: block;
+}
+.emailContactBody h3 {
+  font-weight: 400;
+}
+.emailContactBody p {
   margin: 0;
   color: #666;
   font-size: 0.9rem;

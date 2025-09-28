@@ -4,6 +4,7 @@ const userVals = {
   name: "",
   index: 0,
 };
+let delayFetch = false;
 const emails = new Map();
 $(document).ready(function () {
   init();
@@ -16,7 +17,7 @@ function init() {
 
 function fetchEmail(index) {
   console.log(index);
-
+  
   $.ajax({
     url: `/fetchEmail/${index}`,
     method: "GET",
@@ -32,11 +33,9 @@ function fetchEmail(index) {
 
 function emailsHandler(email) {
   console.log(email);
-
   const index = userVals.index;
   emails.set(userVals.index, email);
-
-  userVals.index++;
+  userVals.index += 1;  
   const tempElement = $(email.body).text();
   $("#emailList").prepend(/*HTML*/ `
     <button data-index="${index}" class="emailContact">
@@ -65,6 +64,10 @@ function listeners() {
       showEmail(true, index);
     }
   });
+  $(document).on("click", ".actionBtn", function () {
+    const index = userVals.index;
+    fetchEmail(index);
+  });
   $("#backToEmailList").on("click", function () {
     showEmail(false);
   });
@@ -79,12 +82,16 @@ function showEmail(showIt = false, index = -1) {
     $("#emailCanvas").addClass("visible");
     $("#mailboxType").addClass("nodisplay");
     $(".emailListNavigation").removeClass("visible");
-    $(".emailCanvasNavigation").addClass("visible");    
+    $(".emailCanvasNavigation").addClass("visible");
     const emailData = emails.get(parseInt(index));
+    actionUI(emailData.actions);
+    if (emailData.actions == false) {
+      fetchEmail(userVals.index);
+    }
     $("#subjectText").html(emailData.subject);
     $("#senderName").html(emailData.name);
     $("#emailBody").html(emailData.body);
-    $('#senderEmail').html(emailData.sender);
+    $("#senderEmail").html(emailData.email);
   } else {
     $("#emailList").addClass("visible");
     $("#emailCanvas").removeClass("visible");
@@ -92,4 +99,15 @@ function showEmail(showIt = false, index = -1) {
     $(".emailListNavigation").addClass("visible");
     $(".emailCanvasNavigation").removeClass("visible");
   }
+}
+
+function actionUI(actions) {
+  $("#options").html("");
+  if (actions == false) {
+    return;
+  }
+  $("#options").html(/*HTML*/ `
+    <button class="ignore actionBtn">Ignore</button>
+    <button class="action actionBtn">Take action</button>
+  `);
 }
