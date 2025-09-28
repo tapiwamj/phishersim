@@ -47,7 +47,7 @@ class StoryManager {
       sender: emailDetails.sender,
       name: emailDetails.name,
       subject: emailDetails.subject,
-      body: body
+      body: body,
     };
   }
   async fetchEmailBody(htmlpath) {
