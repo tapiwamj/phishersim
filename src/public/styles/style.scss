@@ -26,7 +26,8 @@ li {
   font-size: 14px;
   margin-bottom: 10px;
 }
-ul, ol{
+ul,
+ol {
   margin-left: 30px;
 }
 p {
@@ -215,7 +216,8 @@ select {
     margin-bottom: 5px;
     line-height: 1;
   }
-  p, h3{
+  p,
+  h3 {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -270,7 +272,7 @@ section {
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: rgb(227, 221, 221);
-  >*{
+  > * {
     margin: 0;
   }
 }
@@ -335,17 +337,18 @@ section {
 }
 .popupPage {
 }
-.emailbody{
+.emailbody {
   padding: 20px;
 }
-.options{
-  position: fixed;
+.options {
+  position: sticky;
   bottom: 0;
   width: 100%;
   display: flex;
   gap: 10px;
   padding: 10px;
-  >button{
+  > button,
+  div {
     width: 100%;
     padding: 10px;
     text-align: center;
@@ -353,11 +356,15 @@ section {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 }
-.ignore{
-  background-color: #606060;
-      color: white;
+.actionTakenReport {
+  background-color: #626262; /* grey background */
+  color: white;
 }
-.action{
+.ignore {
+  background-color: black;
+  color: white;
+}
+.action {
   background-color: #53f253;
   color: green;
 }

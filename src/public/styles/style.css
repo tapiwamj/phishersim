@@ -20,7 +20,8 @@ li {
   margin-bottom: 10px;
 }
 
-ul, ol {
+ul,
+ol {
   margin-left: 30px;
 }
 
@@ -240,7 +241,8 @@ select.invalid {
   margin-bottom: 5px;
   line-height: 1;
 }
-.emailContactBody p, .emailContactBody h3 {
+.emailContactBody p,
+.emailContactBody h3 {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -375,14 +377,15 @@ section {
 }
 
 .options {
-  position: fixed;
+  position: sticky;
   bottom: 0;
   width: 100%;
   display: flex;
   gap: 10px;
   padding: 10px;
 }
-.options > button {
+.options > button,
+.options div {
   width: 100%;
   padding: 10px;
   text-align: center;
@@ -390,8 +393,13 @@ section {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+.actionTakenReport {
+  background-color: #626262; /* grey background */
+  color: white;
+}
+
 .ignore {
-  background-color: #606060;
+  background-color: black;
   color: white;
 }
 

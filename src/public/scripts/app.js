@@ -2,7 +2,7 @@ import util from "./utilities.js";
 
 const userVals = {
   name: "",
-  index: 0,
+  index: 1,
 };
 let delayFetch = false;
 const emails = new Map();
@@ -16,8 +16,6 @@ function init() {
 }
 
 function fetchEmail(index) {
-  console.log(index);
-  
   $.ajax({
     url: `/fetchEmail/${index}`,
     method: "GET",
@@ -32,10 +30,12 @@ function fetchEmail(index) {
 }
 
 function emailsHandler(email) {
-  console.log(email);
+  email.actionTaken = false;
+  email.actionChosen = false;
   const index = userVals.index;
   emails.set(userVals.index, email);
-  userVals.index += 1;  
+  const emailObj = emails.set(userVals.index, email);
+  userVals.index += 1;
   const tempElement = $(email.body).text();
   $("#emailList").prepend(/*HTML*/ `
     <button data-index="${index}" class="emailContact">
@@ -65,8 +65,16 @@ function listeners() {
     }
   });
   $(document).on("click", ".actionBtn", function () {
-    const index = userVals.index;
-    fetchEmail(index);
+    const index = parseInt($(this).attr("data-index"));
+    const emailData = emails.get(parseInt(index));
+    emailData.actionTaken = true;
+    if ($(this).hasClass("action")) {
+      emailData.actionChosen = true;
+    } else {
+      emailData.actionChosen = false;
+    }
+    chosenActionUI(emailData.actionChosen);
+    // fetchEmail(index);
   });
   $("#backToEmailList").on("click", function () {
     showEmail(false);
@@ -84,7 +92,7 @@ function showEmail(showIt = false, index = -1) {
     $(".emailListNavigation").removeClass("visible");
     $(".emailCanvasNavigation").addClass("visible");
     const emailData = emails.get(parseInt(index));
-    actionUI(emailData.actions);
+    actionUI(emailData.actions, index);
     if (emailData.actions == false) {
       fetchEmail(userVals.index);
     }
@@ -101,13 +109,30 @@ function showEmail(showIt = false, index = -1) {
   }
 }
 
-function actionUI(actions) {
+function actionUI(actions, index) {
+  const emailData = emails.get(parseInt(index));
   $("#options").html("");
+  if (emailData.actionTaken == true) {
+    chosenActionUI(emailData.actionChosen)
+    return;
+  }
   if (actions == false) {
     return;
   }
   $("#options").html(/*HTML*/ `
-    <button class="ignore actionBtn">Ignore</button>
-    <button class="action actionBtn">Take action</button>
+    <button data-index="${index}" class="ignore actionBtn">Ignore</button>
+    <button data-index="${index}" class="action actionBtn">Take action</button>
   `);
+}
+
+function chosenActionUI(action) {
+  let txt = "You have chosen to ";
+  if (action) {
+    txt = txt + "'Take action'";
+  } else {
+    txt = txt + "'Ignore'";
+  }
+  $("#options").html(/*HTML*/ `
+      <div class="actionTakenReport">${txt}</div>
+    `);
 }
