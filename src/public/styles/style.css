@@ -14,9 +14,14 @@
 }
 
 p,
-h3 {
+h3,
+li {
   font-size: 14px;
   margin-bottom: 10px;
+}
+
+ul, ol {
+  margin-left: 30px;
 }
 
 p {
@@ -295,6 +300,9 @@ section {
   padding-bottom: 15px;
   background-color: rgb(227, 221, 221);
 }
+.subject > * {
+  margin: 0;
+}
 
 .fromandto {
   padding-top: 15px;
@@ -358,6 +366,36 @@ section {
 .closepopup img {
   width: 20px;
   height: 20px;
+}
+
+.emailbody {
+  padding: 20px;
+}
+
+.options {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+.options > button {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.ignore {
+  background-color: #606060;
+  color: white;
+}
+
+.action {
+  background-color: #53f253;
+  color: green;
 }
 
 .nodisplay {

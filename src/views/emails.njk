@@ -50,7 +50,7 @@
                 <div class="cancelZone"></div>
             </aside>
             <aside id="emailList" class="emailList visible">
-                <button class="emailContact">
+                {# <button class="emailContact">
                     <div class="emailIcon">
                         <h2>TT</h2>
                     </div>
@@ -85,27 +85,29 @@
                             minus quaerat tempora et laudantium est hic quidem deleniti dolorem, nulla fuga eaque autem
                             inventore ipsa?</p>
                     </div>
-                </button>
+                </button> #}
             </aside>
         </div>
         <div id="emailCanvas" class="emailCanvas">
             <section class="subject">
-                <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3>
+                <h3 id="subjectText">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3>
             </section>
             <section class="emailContact fromandto">
                 <div class="emailIcon">
                         <h2>TT</h2>
                     </div>
                     <div class="emailContactBody">
-                        <h3>ccsd@cc.com</h3>
-                        <h3>To You</h3>
+                        <h3 id="senderName"></h3>
+                        <h3 id="senderEmail"></h3>
                     </div>
             </section>
-            <section class="body">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis ex hic repellendus asperiores
-                    inventore assumenda adipisci odio accusamus, voluptas molestiae, culpa consectetur quaerat aliquam
-                    rerum possimus eaque quos! Commodi, totam.</p>
+            <section class="emailbody">
+                <p id="emailBody"></p>
             </section>
+            <div class="options">
+                <button class="ignore">Ignore</button>
+                <button class="action">Take action</button>
+            </div>
         </div>
     </div>
     {% include "components/popup.njk" %}
