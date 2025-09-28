@@ -24,7 +24,7 @@ app.get('/insert', (req, res) => {
 app.get('/fetchEmail/:index', async(req, res) => {
     const index = parseInt(req.params.index, 10);
     const email = await storyManager.getEmail(index); 
-    return res.json({ email });
+    return res.json(email);
 });
 
 // Start server
