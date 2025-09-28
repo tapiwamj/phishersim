@@ -39,14 +39,16 @@ class StoryManager {
   }
   async getEmail(emailIndex) {
     const emailDetails = StoryManager.SITEMAP.emails[emailIndex];
-    const recipientName = emailDetails.sender;
     let body = await this.fetchEmailBody(emailDetails.path);
     body = body.replace(/\[\/recepient\/\]/g, recipientName);
+    body = body.replace(/\[\/sendername\/\]/g, emailDetails.name);
+    body = body.replace(/\[\/senderemail\/\]/g, emailDetails.email);
     body = this.cleanHTML(body);
     return {
-      sender: emailDetails.sender,
+      email: emailDetails.email,
       name: emailDetails.name,
       subject: emailDetails.subject,
+      actions: emailDetails.actions,
       body: body,
     };
   }

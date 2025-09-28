@@ -4,9 +4,18 @@
         {
             "path": "email1.html",
             "type": "legit",
-            "sender": "it.support@yourcompany.com",
+            "email": "it.support@yourcompany.com",
             "name": "IT Support",
-            "subject": "csdcds"
+            "subject": "Important: Update on IT Policies and Enhanced Security Measures",
+            "actions": []
+        },
+        {
+            "path": "email2.html",
+            "type": "legit",
+            "email": "john.kennedy@yourcompany.com",
+            "name": "John Kennedy",
+            "subject": "Welcome to the Team",
+            "actions": ["ignore", "action"]
         }
     ]
 }
