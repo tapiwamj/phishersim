@@ -1,21 +1,37 @@
 {
-    "companyname": "MJ Works",
-    "emails":[
-        {
-            "path": "email1.html",
-            "type": "legit",
-            "email": "it.support@yourcompany.com",
-            "name": "IT Support",
-            "subject": "Important: Update on IT Policies and Enhanced Security Measures",
-            "actions": false
-        },
-        {
-            "path": "email2.html",
-            "type": "legit",
-            "email": "john.kennedy@yourcompany.com",
-            "name": "John Kennedy",
-            "subject": "Welcome to the Team",
-            "actions": true
-        }
-    ]
+  "companyname": "MJ Works",
+  "emails": [
+    {
+      "path": "email1.html",
+      "type": "legit",
+      "email": "it.support@yourcompany.com",
+      "name": "IT Support",
+      "subject": "Important: Update on IT Policies and Enhanced Security Measures",
+      "actions": false
+    },
+    {
+      "path": "email2.html",
+      "type": "legit",
+      "email": "john.kennedy@yourcompany.com",
+      "name": "John Kennedy",
+      "subject": "Welcome to the Team",
+      "actions": false
+    },
+    {
+      "path": "email3.html",
+      "type": "legit",
+      "email": "lisa.catch@yourcompany.com",
+      "name": "Lisa Catch",
+      "subject": "Welcome from Lisa Catch",
+      "actions": false
+    },
+    {
+      "path": "email4.html",
+      "type": "legit",
+      "email": "john.kennedy@yourcompany.com",
+      "name": "John Kennedy",
+      "subject": "Contractor Payment Details",
+      "actions": true
+    }
+  ]
 }
